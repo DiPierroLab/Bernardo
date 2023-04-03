@@ -1,0 +1,13 @@
+#!/bin/bash  
+#SBATCH --job-name=@jobname 
+#SBATCH --output=@jobname.out 
+#SBATCH --error=@jobname.err 
+#SBATCH --nodes=1
+#SBATCH --time=168:00:00
+#SBATCH --exclusive
+#SBATCH --partition=ctbp
+
+source ~/.bashrc
+conda activate hic
+python @runfile
+#conda deactivate
