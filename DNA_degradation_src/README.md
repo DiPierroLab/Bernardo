@@ -8,7 +8,7 @@ For details on the ensemble of structures, see:
 Harris, H.L., Gu, H., Olshansky, M., Wang, A., Farabella, I., Eliaz, Y., Kalluchi, A., Krishna, A., Jacobs, M., Cauer, G. and Pham, M., 2023. Chromatin alternates between A and B compartments at kilobase scale for subgenic organization. Nature communications, 14(1), p.3303.
 https://www.nature.com/articles/s41467-023-38429-1
 
-The ensemble of structures was generated using NuChrom.
+The ensemble of structures was generated using NuChroM.
 Source code for NuChroM can be accessed at: 
 https://github.com/DiPierroLab/NuChroM
 
