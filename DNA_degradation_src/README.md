@@ -26,7 +26,7 @@ The shell script also submits these Python scripts as batch jobs to a computing 
 The Python scripts require the use of the molecular dynamics package HOOMD version 2.9.7.
 The final outputs of a individual Python script includes '.gsd' files that store the trajectories of the nucleosomes of the degraded structure as well as an '.npz' file with data on which bonds were cut and at what time.
 
-## Calculation of average distance map, average contact map, mean-square displacements and contact probability.**
+## Calculation of average distance map, average contact map, mean-square displacements and contact probability.
 
 With the ensemble of molecular trajectories stored as '.gsd' files and the auxiliary '.npz' files, the calculation of average distance maps, average contact maps, contact probabilities and average mean-square displacements of the nucleosomes follows by running the Python script 'degraded_distance_contact_map.py'.
 
