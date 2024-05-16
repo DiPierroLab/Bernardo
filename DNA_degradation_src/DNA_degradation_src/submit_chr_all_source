@@ -1,0 +1,14 @@
+#!/bin/bash  
+#SBATCH --job-name=@jobname 
+#SBATCH --output=@jobname.out 
+#SBATCH --error=@jobname.err 
+#SBATCH --nodes=1
+#SBATCH --tasks-per-node=@ntasks  
+#SBATCH --time=100:00:00
+#SBATCH --exclusive
+#SBATCH --partition=ctbp
+
+source ~/.bashrc
+conda activate hic
+cat @joblist | /home/b.zubillagaherrera/parallel
+#conda deactivate
