@@ -9,7 +9,7 @@ Harris, H.L., Gu, H., Olshansky, M., Wang, A., Farabella, I., Eliaz, Y., Kalluch
 https://www.nature.com/articles/s41467-023-38429-1
 
 The ensemble of structures was generated using NuChrom.
-Source code for NuChrom can be accessed at: 
+Source code for NuChroM can be accessed at: 
 https://github.com/DiPierroLab/NuChroM
 
 ## Simulation of DNA degradation
