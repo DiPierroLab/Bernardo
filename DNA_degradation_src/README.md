@@ -12,9 +12,19 @@ The ensemble of structures was generated using NuChroM.
 Source code for NuChroM can be accessed at: 
 https://github.com/DiPierroLab/NuChroM
 
+## Relaxation of original structures
+
+The native structures from the ensemble of original structures are first subjected to a relaxation scheme that uses the FIRE algorithm to minimize the energy of the samples.
+The Hamiltonian used includes the following forces: FENE bonds, harmonic angle potentials and truncated Lennard-Jones potentials.
+After the FIRE algorithm has converged, the structures are further evolved in time with Langevin dynamics for the purpose of thermalization.
+The final output of this initial relaxation code for an individual structure is a '.gsd' file that contains the energy-optimized structure which is ready to be used in the DNA degradation simulations.
+
+The shell script 'run_many_minimize.sh' takes in the file 'minimize_chromosome_configuration_source.py' as a template to generate a set of individual Python scripts, one for each structure in the ensemble.
+The shell script also submits these Python scripts as batch jobs to a computing cluster under SLURM, using the file 'submit_chr_all_source' as a template for generating and submitting individual batch scripts.
+
 ## Simulation of DNA degradation
 
-The DNA degradation process takes individual native structures, evolves them in time with Langevin dynamics and chops a total of number of bonds 'ncut' at random periodically, where the period between successive cuts is given by a total number of time steps 'nsteps'. 
+The DNA degradation process takes the individual, energy-optimized, native structures from the .gsd files, evolves them in time with Langevin dynamics and chops a total of number of bonds 'ncut' at random periodically, where the period between successive cuts is given by a total number of time steps 'nsteps'. 
 This periodic process of bond cutting is repeated for a total number of degradation cycles equal to 'ncycles'.
 
 The interaction in the Langevin dynamics includes: FENE bonds, harmonic angle potentials and truncated Lennard-Jones potentials.
