@@ -1,6 +1,6 @@
 # README file for DNA degradation simulations
 
-Included in this folder are source code files for generating Python scripts that simulate the degradation of an ensemble of native structures representative of lymphoblastoid cells over a 1.1Mb region of chromosome 7 (95.4 to 96.5 Mbp) at a nucleosome resultion (200bp), comprised of 5500 beads each. 
+Included in this folder are source code files for generating Python scripts that simulate the degradation of an ensemble of native structures representative of lymphoblastoid cells over a 1.1Mb region of chromosome 7 (95.4 to 96.5 Mbp) at a nucleosome resolution (200bp), comprised of 5500 beads each. 
 
 ## Ensemble of original structures
 
@@ -15,7 +15,7 @@ https://github.com/DiPierroLab/NuChroM
 ## Relaxation of original structures
 
 The native structures from the ensemble of original structures are first subjected to a relaxation scheme that uses the FIRE algorithm to minimize the energy of the samples.
-The Hamiltonian used includes the following forces: FENE bonds, harmonic angle potentials and truncated Lennard-Jones potentials.
+The Hamiltonian includes the following forces: FENE bonds, harmonic angle potentials and truncated Lennard-Jones potentials.
 After the FIRE algorithm has converged, the structures are further evolved in time with Langevin dynamics for the purpose of thermalization.
 The final output of this initial relaxation code for an individual structure is a '.gsd' file that contains the energy-optimized structure which is ready to be used in the DNA degradation simulations.
 
