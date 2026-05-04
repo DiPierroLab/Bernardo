@@ -1,0 +1,32 @@
+#!/bin/bash
+#
+# Slurm submission template for the generated MD simulation, crosslinking, and digestion stages...
+#
+# Placeholders such as @jobname, @ntasks, and @joblist are replaced
+# by the corresponding generator script before submission.
+#
+# Users should adjust the partition, walltime, environment name,
+# and GNU parallel command as appropriate for their HPC system.
+
+#SBATCH --job-name=@jobname 
+#SBATCH --output=@jobname.out 
+#SBATCH --error=@jobname.err 
+#SBATCH --nodes=1
+#SBATCH --tasks-per-node=@ntasks  
+#SBATCH --time=100:00:00
+#SBATCH --exclusive
+#SBATCH --partition=partition_name
+
+# Load user shell configuration, if needed.
+source ~/.bashrc
+
+# Activate the conda environment used for this project.
+conda activate hic
+
+
+# Run commands listed in the generated job list using GNU parallel.
+# Adjust the path to GNU parallel as needed for your HPC system.
+cat @joblist | parallel
+
+# If GNU parallel is installed in a non-standard location, use e.g.:
+# cat @joblist | /path/to/parallel

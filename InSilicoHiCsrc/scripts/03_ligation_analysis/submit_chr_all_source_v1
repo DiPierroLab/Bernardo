@@ -1,0 +1,31 @@
+#!/bin/bash  
+#
+# Slurm submission template for ligation analysis stage of the in-silico Hi-C pipeline.
+#
+# Placeholders such as @jobname, @ntasks, and @joblist are replaced
+# by the corresponding generator script before submission.
+#
+# Users should adjust partition, walltime, environment, and resource
+# settings as appropriate for their HPC system.
+
+#SBATCH --job-name=@jobname 
+#SBATCH --output=@jobname.out 
+#SBATCH --error=@jobname.err 
+#SBATCH --nodes=1
+#SBATCH --tasks-per-node=@ntasks  
+#SBATCH --time=168:00:00
+#SBATCH --exclusive
+#SBATCH --partition=partition_name
+
+# Load user shell configuration (if needed)
+source ~/.bashrc
+
+# Activate conda environment
+conda activate hic
+
+# Run commands listed in the generated job list using GNU parallel.
+# Adjust the path to GNU parallel as needed for your HPC system.
+cat @joblist | parallel
+
+# If GNU parallel is installed in a non-standard location, use e.g.:
+# cat @joblist | /path/to/parallel

@@ -1,0 +1,12 @@
+NOTICE
+------
+
+This code was developed by Linden Burack and is included in this repository with explicit permission from the author.
+
+Original repository:
+https://github.com/lrburack/restriction-site-distribution
+
+This code is provided for reproducibility of the results presented in:
+“Understanding the physical processes behind DNA–DNA proximity ligation assays”.
+
+No explicit license was provided in the original repository. Redistribution here is done with permission of the author.
